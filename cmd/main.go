@@ -26,15 +26,15 @@ func main() {
 	​    Slug  string
 	}
 
-	var products = []Product{
-	​    Product{Id: 1, Name: "Hover Shooters", Slug: "hover-shooters"},
-	​    Product{Id: 2, Name: "Ocean Explorer", Slug: "ocean-explorer"},
+	var temtdata = []TempSt{
+	​    TempSt{Id: 1, Name: "Hover Shooters", Slug: "hover-shooters"},
+	​    TempSt{Id: 2, Name: "Ocean Explorer", Slug: "ocean-explorer"},
 	}
 
 
-	var ProductsHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
+	var TestHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
 	​    // Конвертируем в json
-	​    payload, _ := json.Marshal(products)
+	​    payload, _ := json.Marshal(tempdata)
 	    w.Header().Set("Content-Type", "application/json")
 	    w.Write([]byte(payload))
 		})
